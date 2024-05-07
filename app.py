@@ -30,15 +30,19 @@ def ocr(image_path):
         # Keep only digits and dot
         cleaned_text = text.replace(' ', '')
         cleaned_text = cleaned_text.replace('i', '1')  # Replace 'i' with '1'
+        cleaned_text = cleaned_text.replace('I', '1')
         cleaned_text = cleaned_text.replace('S', '5')  # Replace 'S' with '5'
         cleaned_text = cleaned_text.replace('l', '1')  # Replace 'l' with '1'
         cleaned_text = cleaned_text.replace('o', '0')  # Replace 'o' with '0'
         cleaned_text = cleaned_text.replace('O', '0')  # Replace 'O' with '0'
         cleaned_text = cleaned_text.replace('B', '8')  # Replace 'B' with '8'
+        cleaned_text = cleaned_text.replace('G', '6')
         cleaned_text = cleaned_text.replace('D', '0')  # Replace 'D' with '0'
         cleaned_text = cleaned_text.replace('(', '1')
         cleaned_text = cleaned_text.replace(')', '1')
         cleaned_text = cleaned_text.replace('|', '1')
+        cleaned_text = cleaned_text.replace('"', '.')
+        cleaned_text = cleaned_text.replace('$', '5')
         # Add more replacements as needed
         return cleaned_text
     except Exception as e:
